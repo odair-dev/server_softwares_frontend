@@ -1,0 +1,59 @@
+@keyframes animationModal{
+    0%{transform: translateY(-500px);}
+    100%{transform: translateY(0);}
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.modal{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: 2;
+    background-color: rgba(30, 50, 80, 0.5);
+    backdrop-filter: blur(2px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    form{
+      position: absolute;
+      z-index: 2;
+      //   width: 96%;
+      //   max-width: 310px;
+      background-color: white;
+      border-radius: 8px;
+      padding: 8px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0px 4px 8px 8px rgba(0, 0, 0, 0.3);
+      animation: animationModal 0.5s;
+      h1{
+        font-size: 22rem;
+        color: rgb(30, 50, 80);
+      }
+      label{
+        font-size: 12rem;
+        font-weight: 600;
+      }
+      input{
+        width: 200px;
+        height: 40px;
+        border-radius: 8px;
+        border: 1px solid gray;
+        padding-left: 8px;
+        margin-bottom: 8px;
+      }
+      .btnRegister{
+        width: 200px;
+        height: 40px;
+        font-weight: 600;
+        border: none;
+        border-radius: 8px;
+        background-color: rgba(51, 184, 100, .8);
+        color: white;
+        &:hover{
+            background-color: #33B864;
+        }
+    }
+    }
+}
