@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Desafio React Jr
 
-## Getting Started
+## Passos para realizar o desafio
 
-First, run the development server:
+- Você deve criar um repositório para esse desafio.
+- Desenvolver as aplicações conforme descrito abaixo.
+- Após finalizar, faça o push para seu repositório, revise seu código e envie por e-mail o endereço do repositório para que possamos analisar o código.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+# Descritivo do desafio
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Backend
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Fazer um backend em Node.js ou PHP, acessando um banco de dados (MySQL, Postgres ou MongoDB). Criar um banco de dados com uma única tabela, produtos, com os seguintes campos:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- codigo
+- descricao
+- preco
+- data_cadastro
 
-## Learn More
+O backend tem que expor uma API Rest/JSON com suporte para um CRUD simples (inserção, atualização, consulta e exclusão).
 
-To learn more about Next.js, take a look at the following resources:
+## Frontend
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Fazer uma aplicação em HTML, CSS e JS, caso tenha conhecimento, pode ser utilizado ReactJS. O frontend deve acessar a API do backend.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Fazer uma tela simples para exibir uma lista de produtos na tela, com os campos:
 
-## Deploy on Vercel
+- codigo
+- descricao
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Cada item da lista precisa ter ações de editar, excluir e detalhes. Ao clicar em detalhes, deve exibir todos os campos daquele item:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- codigo
+- descricao
+- preco
+- data_cadastro
+
+# Observações
+
+> Dica: Começar pelo backend
+
+> Dica: Utililzar VS Code.
+
+- Verificar o uso de Verbos HTTP para construção da API
+
+- No frontend, mapear os dados retornados pela API para uma classe
+
+- O frontend pode ser bem simples, não é ncessário tela de login ou algo sofisticado, mas atentar para bom acabamento, não possuir bugs e ter os tratamentos de erros adequados, não dando mensagens de erro técnicas para o usuário e tratando dados inválidos de forma amigável.
+
+- O programa pode ser minimalista, pode ter só o mínimo de funcionalidade necessária para realizar as operações pedidas e nada mais.
+
+- **Opcional**: Separar a camada de comunicação com o banco da camada da API (controller)
+
+- **Opcional**: Rodar o backend e o banco de dados em um container.
