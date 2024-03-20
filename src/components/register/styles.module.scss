@@ -1,0 +1,54 @@
+.container{
+    width: 100%;
+    min-width: 300px;
+    // min-height: 150px;
+    // border: 1px solid orangered;
+    // background-color: white;
+    padding: 10px;
+    margin-bottom: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    h1{
+        font-size: 24rem;
+    }
+    .formProduct{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-end;
+        justify-content: center;
+        // border: 1px solid blue;
+        // flex-direction: column;
+        .divAlign{
+            display: flex;
+            flex-direction: column;
+            margin: 0 8px;
+            // border: 1px solid red;
+            label{
+                font-size: 12rem;
+                font-weight: 600;
+            }
+            input{
+                width: 200px;
+                height: 40px;
+                border-radius: 8px;
+                border: 1px solid gray;
+                padding-left: 8px;
+            }
+        }
+        .btnRegister{
+            width: 200px;
+            height: 40px;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            background-color: rgba(51, 184, 100, .8);
+            color: white;
+            margin-top: 8px;
+            &:hover{
+                background-color: #33B864;
+            }
+        }
+    }
+}
