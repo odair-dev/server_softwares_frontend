@@ -1,6 +1,7 @@
 "use client";
 import { api } from "@/services/api";
 import { Dispatch, SetStateAction, createContext, useState } from "react";
+import { toast } from "react-toastify";
 
 export interface IProdutos {
   codigo: string;
@@ -54,7 +55,7 @@ export function GlobalProvider({ children }: IGlobalProviderProps) {
       return true;
     } catch (error) {
       console.log("Erro ao buscar informações");
-      //toast.error("Erro ao buscar informações");
+      toast.error("Erro ao buscar informações");
       return false;
     }
   }
@@ -64,8 +65,6 @@ export function GlobalProvider({ children }: IGlobalProviderProps) {
       const response = await api.patch(`/produtos/${id}`, {
         ...data,
       });
-      //console.log(response.data);
-      //setUser(response.data);
       return true;
     } catch (error) {
       console.log("Não foi possível realizar a atualização. \n", error);

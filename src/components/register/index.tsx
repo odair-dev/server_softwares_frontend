@@ -1,8 +1,8 @@
 import { useContext } from "react";
 import styles from "./styles.module.scss";
-// import { useForm } from "react-hook-form";
 import { GlobalContext } from "@/providers/GlobalContext";
 import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 
 export default function Register() {
   const { register, handleSubmit, reset } = useForm();
@@ -11,14 +11,14 @@ export default function Register() {
   async function handleSend(data: any) {
     const statusOk = await registerProduto(data);
     if (statusOk) {
-      console.log("Registro realizado");
+      console.log("Registro realizado com sucesso.");
+      toast.success("Registro realizado com sucesso.");
       reset({ descricao: "", preco: "" });
       getProdutos();
     } else {
-      // toast.error("Erro ao realizar o registro");
+      toast.error("Erro ao realizar o registro");
       console.log("Erro ao realizar o registro");
     }
-    // console.log(data);
   }
 
   return (

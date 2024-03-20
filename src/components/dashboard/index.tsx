@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import styles from "./styles.module.scss";
 import { GlobalContext, IProdutos } from "@/providers/GlobalContext";
+import { toast } from "react-toastify";
 
 export default function Dashboard() {
   const {
@@ -22,12 +23,12 @@ export default function Dashboard() {
     const statusOk = await removeProduto(id);
     if (statusOk) {
       console.log("Produto removido");
+      toast.success("Produto removido");
       getProdutos();
     } else {
-      // toast.error("Erro ao realizar o registro");
+      toast.error("Erro ao realizar a operação");
       console.log("Erro ao realizar a operação");
     }
-    // console.log(data);
   }
 
   async function handleUpdate(data: IProdutos) {

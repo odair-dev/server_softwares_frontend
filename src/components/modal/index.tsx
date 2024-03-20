@@ -2,6 +2,7 @@ import { useContext } from "react";
 import styles from "./styles.module.scss";
 import { GlobalContext } from "@/providers/GlobalContext";
 import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 
 export default function Modal() {
   const { produtoUpdate, setProdutoUpdate, updateProduto, getProdutos } =
@@ -12,12 +13,13 @@ export default function Modal() {
     if (produtoUpdate != null) {
       const statusOk = await updateProduto(data, produtoUpdate.codigo);
       if (statusOk) {
-        console.log("Atualização realizada");
+        console.log("Atualização realizada com sucesso.");
+        toast.success("Atualização realizada com sucesso.");
         reset({ descricao: "", preco: "" });
         getProdutos();
         setProdutoUpdate(null);
       } else {
-        // toast.error("Erro ao realizar o registro");
+        toast.error("Erro ao realizar a atualização");
         console.log("Erro ao realizar a atualização");
       }
     }
