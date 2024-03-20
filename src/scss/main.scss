@@ -1,0 +1,21 @@
+@import 'reset';
+
+body{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // background-color: red;
+    // border: 1px solid blue;
+    background-color: #f2f5f7;
+    main{
+        width: 100%;
+        max-width: 1200px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 8px;
+        // background-color: rgb(100, 100, 100);
+        // border: 1px solid black;
+    }
+}
